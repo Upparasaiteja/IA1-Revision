@@ -1,0 +1,124 @@
+ 
+ gcc -g p6final.c
+ ./a.out
+Enter a string a: 
+2
+Enter a string b: 3
+3 is greater than 2
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x722: file p6final.c, line 9.
+(gdb) r
+Starting program: /home/runner/IA1-Revision/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:9
+9   {
+(gdb) n
+13    input(a, b);
+(gdb) n
+ 
+ gcc -g p7final.c
+ ./a.out
+For 1st complex number 
+Enter the real and imaginary parts: 3
+4
+
+For 2nd complex number 
+Enter the real and imaginary parts: 5
+6
+Sum = 8.0 + 10.0i 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x772: file p7final.c, line 9.
+(gdb) r
+Starting program: /home/runner/IA1-Revision/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7final.c:9
+9   int main() {
+(gdb) n
+12      printf("For 1st complex number \n");
+(gdb) n
+For 1st complex number 
+13      printf("Enter the real and imaginary parts: ");
+(gdb) n
+14      scanf("%f %f", &n1.real, &n1.imag);
+(gdb) n
+Enter the real and imaginary parts: 6
+7
+15      printf("\nFor 2nd complex number \n");
+(gdb) n
+
+For 2nd complex number 
+16      printf("Enter the real and imaginary parts: ");
+(gdb) n
+17      scanf("%f %f", &n2.real, &n2.imag);
+(gdb) n
+Enter the real and imaginary parts: 7
+8
+19      result = add(n1, n2);
+(gdb) n
+21      printf("Sum = %.1f + %.1fi", result.real, result.imag);
+(gdb) n
+22      return 0;
+(gdb) l
+17      scanf("%f %f", &n2.real, &n2.imag);
+18
+19      result = add(n1, n2);
+20
+21      printf("Sum = %.1f + %.1fi", result.real, result.imag);
+22      return 0;
+23  }
+24
+25  complex add(complex n1, complex n2) {
+26      complex temp;
+(gdb) s
+23  }
+(gdb) p
+The history is empty.
+(gdb) c
+Continuing.
+Sum = 13.0 + 15.0i[Inferior 1 (process 843) exited normally]
+(gdb) l
+18
+19      result = add(n1, n2);
+20
+21      printf("Sum = %.1f + %.1fi", result.real, result.imag);
+22      return 0;
+23  }
+24
+25  complex add(complex n1, complex n2) {
+26      complex temp;
+27      temp.real = n1.real + n2.real;
+(gdb) 
